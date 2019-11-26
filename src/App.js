@@ -3,18 +3,13 @@ import './App.css';
 import ToDoListHeader from './ToDoListHeader';
 import ToDoListFooter from './ToDoListFooter';
 import ToDoListTasks from './ToDoListTasks';
-// классовая компонента - объект, у которого есть свой локальный стейт и метод сетстейт
+
+
+// классовая компонента - объект, у которого есть свой локальный стейт и
+// метод сетстейт
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.newTaskTitleRef = React.createRef();
-        /*  setTimeout(() => {
-              let newTask = {title: "React", isDone: false, priority: "hight"};
-              let newTasks = [...this.state.tasks, newTask];
-              this.setState ({
-                  tasks: newTasks
-              });
-          }, 2000)*/
     };
 
     state = {
@@ -24,13 +19,12 @@ class App extends React.Component {
             {title: "JS", isDone: true, priority: "high"},
             {title: "ReactJS", isDone: false, priority: "hight"}
         ],
-
-        filterValue: "Completed",
+        filterValue: "Active",
     };
 
-    onAddTaskClick = () => {
+    addTask = (newText) => {
         let newTask = {
-            title: this.newTaskTitleRef.current.value,
+            title: newText,
             isDone: false,
             priority: "hight"
         };
@@ -38,25 +32,43 @@ class App extends React.Component {
         this.setState({
             tasks: newTasks
         });
-        this.newTaskTitleRef.current.value = "";
-    }
+    };
+
+    changeFilter = (newFilterValue) => {
+        this.setState({
+            filterValue: newFilterValue
+        })
+    };
+
+    changeStatus = (task, isDone) =>{
+        let newTasks = this.state.tasks.map(
+            t => {
+                if(t!==task) return t
+                else return {...task, isDone}
+            }
+        )
+        this.setState({
+            tasks: newTasks
+            })
+    };
 
     render = () => {
+        const getFiltredTasks = (tasks, filter) => {
+            return tasks.filter(t => {
+                switch (filter) {
+                    case 'All': return true;
+                    case 'Completed': return t.isDone;
+                    case 'Active':return !t.isDone;
+                }
+            })
+        };
+
         return (
             <div className="App">
                 <div className="todoList">
-
-                    <div className="todoList-header">
-                        <h3 className="todoList-header__title">What to Learn</h3>
-                        <div className="todoList-newTaskForm">
-                            <input ref={this.newTaskTitleRef} type="text" placeholder="New task name"/>
-                            <button onClick={this.onAddTaskClick}>Add</button>
-                        </div>
-                    </div>
-
-                    {/*<ToDoListHeader/>*/}
-                    <ToDoListTasks tasks={this.state.tasks}/>
-                    <ToDoListFooter filterValue={this.state.filterValue}/>
+                    <ToDoListHeader addTask={this.addTask}/>
+                    <ToDoListTasks tasks={getFiltredTasks(this.state.tasks, this.state.filterValue)} changeStatus={this.changeStatus}/>
+                    < ToDoListFooter changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
 
                 </div>
             </div>
@@ -65,4 +77,5 @@ class App extends React.Component {
 }
 
 export default App;
+
 
