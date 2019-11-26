@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b41d6252-e771-4fad-b5d4-310a96dc167e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoListFooter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListFooter.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoListHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListHeader.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoListTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListTask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoListTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListTasks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +74,17 @@
       <workItem from="1574175253830" duration="11280000" />
       <workItem from="1574245135714" duration="9000" />
       <workItem from="1574695779138" duration="1361000" />
+      <workItem from="1574751937559" duration="9000000" />
+      <workItem from="1574787620033" duration="1323000" />
     </task>
+    <task id="LOCAL-00001" summary="Added filtration (All, Complited, Active) and checkbox started to work">
+      <created>1574752367924</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574752367924</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,5 +102,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added filtration (All, Complited, Active) and checkbox started to work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added filtration (All, Complited, Active) and checkbox started to work" />
   </component>
 </project>

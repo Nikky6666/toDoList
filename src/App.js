@@ -19,7 +19,7 @@ class App extends React.Component {
             {title: "JS", isDone: true, priority: "high"},
             {title: "ReactJS", isDone: false, priority: "hight"}
         ],
-        filterValue: "Active",
+        filterValue: "All",
     };
 
     addTask = (newText) => {
