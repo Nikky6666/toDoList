@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b41d6252-e771-4fad-b5d4-310a96dc167e" name="Default Changelist" comment="">
+    <list default="true" id="b41d6252-e771-4fad-b5d4-310a96dc167e" name="Default Changelist" comment="Added ToDoList component with own title and tasks, AddNewItemForm">
+      <change afterPath="$PROJECT_DIR$/src/ToDoList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ToDoListTitle.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoListFooter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListFooter.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoListHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListHeader.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoListHeader.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddNewItemForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoListTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListTask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToDoListTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListTasks.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +31,11 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\React\to_do_list\src" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -75,7 +82,20 @@
       <workItem from="1574245135714" duration="9000" />
       <workItem from="1574695779138" duration="1361000" />
       <workItem from="1574751937559" duration="9000000" />
-      <workItem from="1574787620033" duration="1323000" />
+      <workItem from="1574787620033" duration="2266000" />
+      <workItem from="1574850107380" duration="8000" />
+      <workItem from="1575274722920" duration="4442000" />
+      <workItem from="1575305943592" duration="11000" />
+      <workItem from="1575373511785" duration="86000" />
+      <workItem from="1575448787369" duration="8000" />
+      <workItem from="1575703296351" duration="1851000" />
+      <workItem from="1575707941670" duration="599000" />
+      <workItem from="1575712012996" duration="5000" />
+      <workItem from="1575874725012" duration="7392000" />
+      <workItem from="1575884532142" duration="9000" />
+      <workItem from="1576406534205" duration="6530000" />
+      <workItem from="1576502859107" duration="10000" />
+      <workItem from="1577200954938" duration="319000" />
     </task>
     <task id="LOCAL-00001" summary="Added filtration (All, Complited, Active) and checkbox started to work">
       <created>1574752367924</created>
@@ -84,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574752367924</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added show-hide filtrating buttons, added show error in null input, added class for complited task, onKeyPress">
+      <created>1574789398290</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574789398290</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +132,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added filtration (All, Complited, Active) and checkbox started to work" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added filtration (All, Complited, Active) and checkbox started to work" />
+    <MESSAGE value="Added show-hide filtrating buttons, added show error in null input, added class for complited task, onKeyPress" />
+    <MESSAGE value="Added ToDoList component with own title and tasks, AddNewItemForm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ToDoList component with own title and tasks, AddNewItemForm" />
   </component>
 </project>

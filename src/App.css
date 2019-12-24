@@ -1,18 +1,16 @@
 .App {
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .todoList {
-  width: 500px;
+  width: 300px;
   margin: 0 auto;
 }
 
 .todoList > div {
   padding: 10px;
-}
-
-.todoList-task {
-
 }
 
 .filter-active {
