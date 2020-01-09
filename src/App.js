@@ -3,7 +3,8 @@ import './App.css';
 import ToDoList from "./ToDoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
-import {addTodoListAC} from "./reduser";
+import {addTodolist, setTodolists} from "./reduser";
+import axios from 'axios'
 
 class App extends React.Component {
 
@@ -15,7 +16,13 @@ class App extends React.Component {
         this.restoreState();
     }
 
-    restoreState = () => {
+    restoreState = () =>{
+        axios.get("https://social-network.samuraijs.com/api/1.0/todo-lists", {withCredentials: true})
+            .then(res => {
+                this.props.setTodolists(res.data)});
+    };
+
+    __restoreState = () => {
         let state = {
             todolists: []
         };
@@ -35,14 +42,24 @@ class App extends React.Component {
     };
 
     nextTodoListId = 4;
+
     addTodoList = (title) => {
-        this.props.addTodolist(title, this.nextTodoListId++);
+        axios.post("https://social-network.samuraijs.com/api/1.0/todo-lists", {title},
+            {
+                withCredentials: true,
+                headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
+            }).then(res=>{
+                const todolist = res.data.data.item;
+                debugger;
+                this.props.addTodolist(todolist);
+        })
+     /*   this.props.addTodolist(title, this.nextTodoListId++);*/
     };
 
     render = () => {
         const todolists = this.props
             .todolists
-            .map(td => <ToDoList id={td.id} title={td.title} tasks={td.tasks}/>);
+            .map(td => <ToDoList key={td.id} id={td.id} title={td.title} tasks={td.tasks}/>);
         return (
             <>
                 <div>
@@ -61,15 +78,9 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addTodolist: (title, todolistId) => {
-            dispatch(addTodoListAC(title, todolistId));
-        },
-    }
-};
 
-const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+
+const ConnectedApp = connect(mapStateToProps, {addTodolist, setTodolists})(App);
 
 export default ConnectedApp;
 
