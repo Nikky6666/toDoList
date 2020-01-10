@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b41d6252-e771-4fad-b5d4-310a96dc167e" name="Default Changelist" comment="Added requests on server (for todolists and tasks)">
+    <list default="true" id="b41d6252-e771-4fad-b5d4-310a96dc167e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoListTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListTask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ToDoListTasks.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListTasks.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoListTitle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListTitle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,7 +111,8 @@
       <workItem from="1578517870976" duration="2145000" />
       <workItem from="1578543565404" duration="9817000" />
       <workItem from="1578582630175" duration="11697000" />
-      <workItem from="1578600210029" duration="775000" />
+      <workItem from="1578600210029" duration="996000" />
+      <workItem from="1578646223706" duration="2742000" />
     </task>
     <task id="LOCAL-00001" summary="Added filtration (All, Complited, Active) and checkbox started to work">
       <created>1574752367924</created>
@@ -136,7 +142,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578518606572</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added requests on server (for todolists and tasks)">
+      <created>1578601130842</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1578601130842</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +173,7 @@
     <MESSAGE value="Added show-hide filtrating buttons, added show error in null input, added class for complited task, onKeyPress" />
     <MESSAGE value="Added ToDoList component with own title and tasks, AddNewItemForm" />
     <MESSAGE value="Used store and action creators" />
-    <option name="LAST_COMMIT_MESSAGE" value="Used store and action creators" />
+    <MESSAGE value="Added requests on server (for todolists and tasks)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added requests on server (for todolists and tasks)" />
   </component>
 </project>

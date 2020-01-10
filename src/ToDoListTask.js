@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import axios from 'axios'
 
 class ToDoListTask extends React.Component {
 
     state = {
         editMode: false,
+        title: this.props.task.title
     };
 
     activateEditMode = () => {
@@ -17,29 +17,21 @@ class ToDoListTask extends React.Component {
     deactivateEditMode= () => {
         this.setState({
             editMode: false
-        })
+        });
+        const updatedTask = {...this.props.task, title: this.state.title};
+        this.props.changeTask(updatedTask);
     };
 
     onTitleChanged = (e) =>{
-        const updatedTask = {...this.props.task, title: e.currentTarget.value};
-        this.props.changeTask(updatedTask)
+        this.setState({
+            title: e.currentTarget.value
+        })
     };
 
     onIsDoneChanged = (e) => {
         let status = e.currentTarget.checked ? 2 : 0;
         const updatedTask = {...this.props.task, status};
         this.props.changeTask(updatedTask);
-    };
-
-    deleteTask = () => {
-        axios.delete(`https://social-network.samuraijs.com/api/1.0/todo-lists/tasks/${this.props.task.id}`, {
-            withCredentials: true,
-            headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-        })
-            .then(res=>{
-                if(res.data.resultCode===0) this.props.deleteTask(this.props.todolistId, this.props.task.id)
-            })
-
     };
 
         render = () => {
@@ -58,12 +50,12 @@ class ToDoListTask extends React.Component {
                 {this.state.editMode ? <input
                                         onBlur={this.deactivateEditMode}
                                         autoFocus={true}
-                                        value={this.props.task.title}
+                                        value={this.state.title}
                                         onChange={this.onTitleChanged}
                     /> :
                     <span onClick={this.activateEditMode}>{this.props.task.title}, priority: {priority}</span>
                 }
-                <button onClick={this.deleteTask}>X</button>
+                <button onClick={()=> {this.props.deleteTask(this.props.task.id)}}>X</button>
         </div>
         );
     }

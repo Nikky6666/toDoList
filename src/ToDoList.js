@@ -7,6 +7,7 @@ import ToDoListTitle from "./ToDoListTitle";
 import {connect} from "react-redux";
 import {addTask, deleteTask, setTasks, deleteTodolist, updateTask} from "./reduser";
 import axios from "axios";
+import {api} from "./api";
 
 
 class ToDoList extends React.Component {
@@ -16,11 +17,7 @@ class ToDoList extends React.Component {
     }
 
     restoreState = () =>{
-        axios.get(`https://social-network.samuraijs.com/api/1.1/todo-lists/${this.props.id}/tasks`,
-            {
-                withCredentials: true,
-                headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-            }).then(res=>{
+        api.getTasks(this.props.id).then(res=>{
             const allTasks = res.data.items;
             this.props.setTasks(allTasks, this.props.id)
         })
@@ -54,11 +51,7 @@ class ToDoList extends React.Component {
     };
 
     addTask = (title) => {
-        axios.post(`https://social-network.samuraijs.com/api/1.1/todo-lists/${this.props.id}/tasks`, {title},
-            {
-                withCredentials: true,
-                headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-            }).then(res=>{
+        api.createTask(title, this.props.id).then(res=>{
             const task = res.data.data.item;
             this.props.addTask(task, this.props.id);
         })
@@ -81,12 +74,15 @@ class ToDoList extends React.Component {
     };*/
 
     changeTask = (updatedTask) => {
-        axios.put(`https://social-network.samuraijs.com/api/1.1/todo-lists/${this.props.id}/tasks/${updatedTask.id}`, updatedTask, {
-            withCredentials: true,
-            headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-        }).then(res=>{if(res.data.resultCode===0) this.props.updateTask(updatedTask.id, updatedTask, this.props.id);})
+        api.updateTask(this.props.id, updatedTask).then(res=>{if(res.data.resultCode===0) this.props.updateTask(updatedTask.id, updatedTask, this.props.id);})
     };
 
+    deleteTask = (taskId) => {
+        api.deleteTask(taskId).then(res=>{
+                if(res.data.resultCode===0) this.props.deleteTask(this.props.id, taskId)
+            })
+
+    };
     render = () => {
         let {tasks = []} = this.props;
         const getFiltredTasks = (tasks, filter) => {
@@ -109,7 +105,7 @@ class ToDoList extends React.Component {
                     <AddNewItemForm addItem={this.addTask}/>
                 </div>
                 <ToDoListTasks todolistId={this.props.id} tasks={getFiltredTasks(tasks, this.state.filterValue)}
-                               deleteTask={this.props.deleteTask}
+                               deleteTask={this.deleteTask}
                                changeTask={this.changeTask}
                 />
                 < ToDoListFooter changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
