@@ -5,8 +5,7 @@ import ToDoListFooter from './ToDoListFooter';
 import ToDoListTasks from './ToDoListTasks';
 import ToDoListTitle from "./ToDoListTitle";
 import {connect} from "react-redux";
-import {addTask, deleteTask, setTasks, deleteTodolist, updateTask} from "./reduser";
-import axios from "axios";
+import {addTask, deleteTask, setTasks, deleteTodolist, updateTask, updateTodolistTitle} from "./reduser";
 import {api} from "./api";
 
 
@@ -101,7 +100,7 @@ class ToDoList extends React.Component {
         return (
             <div className="todoList">
                 <div className="todoList-header">
-                    <ToDoListTitle deleteTodolist={this.props.deleteTodolist} todolistId={this.props.id} title={this.props.title}/>
+                    <ToDoListTitle updateTodolistTitle={this.props.updateTodolistTitle} deleteTodolist={this.props.deleteTodolist} todolistId={this.props.id} title={this.props.title}/>
                     <AddNewItemForm addItem={this.addTask}/>
                 </div>
                 <ToDoListTasks todolistId={this.props.id} tasks={getFiltredTasks(tasks, this.state.filterValue)}
@@ -116,7 +115,7 @@ class ToDoList extends React.Component {
 
 
 
-const ConnectedToDoList = connect(null, {addTask, updateTask, setTasks, deleteTask, deleteTodolist})(ToDoList);
+const ConnectedToDoList = connect(null, {addTask, updateTask, setTasks, deleteTask, deleteTodolist, updateTodolistTitle})(ToDoList);
 
 export default ConnectedToDoList;
 

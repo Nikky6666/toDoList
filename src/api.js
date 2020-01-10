@@ -4,7 +4,7 @@ const instance = axios.create({
     baseURL: "https://social-network.samuraijs.com/api/1.1/todo-lists",
     withCredentials: true,
     headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-})
+});
 
 export const api = {
     getTodolists(){
@@ -15,6 +15,9 @@ export const api = {
     },
     deleteTodolist(todolistId){
         return instance.delete(`/${todolistId}`)
+    },
+    updateTodolistTitle(todolistId, title){
+        return instance.put(`/${todolistId}`, {title})
     },
     createTask(newTaskTitle, todolistId){
       return   instance.post(`/${todolistId}/tasks`, {title: newTaskTitle})
