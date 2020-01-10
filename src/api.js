@@ -1,34 +1,26 @@
 import axios from 'axios'
 
+const instance = axios.create({
+    baseURL: "https://social-network.samuraijs.com/api/1.1/todo-lists",
+    withCredentials: true,
+    headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
+})
+
 export const api = {
     getTodolists(){
-        return  axios.get("https://social-network.samuraijs.com/api/1.0/todo-lists", {withCredentials: true});
+        return  instance.get("");
     },
     createTodolist(title){
-        return axios.post("https://social-network.samuraijs.com/api/1.0/todo-lists", {title},
-            {
-                withCredentials: true,
-                headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-            })
+        return instance.post("", {title},)
     },
     deleteTodolist(todolistId){
-        return axios.delete(`https://social-network.samuraijs.com/api/1.0/todo-lists/${todolistId}`, {
-            withCredentials: true,
-            headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-        })
+        return instance.delete(`/${todolistId}`)
     },
     createTask(newTaskTitle, todolistId){
-      return   axios.post(`https://social-network.samuraijs.com/api/1.1/todo-lists/${todolistId}/tasks`, {title: newTaskTitle},
-            {
-                withCredentials: true,
-                headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-            })
+      return   instance.post(`/${todolistId}/tasks`, {title: newTaskTitle})
     },
     updateTask(todolisId, updatedTask){
-        return axios.put(`https://social-network.samuraijs.com/api/1.1/todo-lists/${todolisId}/tasks/${updatedTask.id}`, updatedTask, {
-            withCredentials: true,
-            headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-        })
+        return instance.put(`/${todolisId}/tasks/${updatedTask.id}`, updatedTask)
     },
     deleteTask(taskId){
         return axios.delete(`https://social-network.samuraijs.com/api/1.0/todo-lists/tasks/${taskId}`, {
@@ -37,10 +29,6 @@ export const api = {
         })
     },
     getTasks(todolistId){
-        return axios.get(`https://social-network.samuraijs.com/api/1.1/todo-lists/${todolistId}/tasks`,
-            {
-                withCredentials: true,
-                headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-            })
+        return instance.get(`/${todolistId}/tasks`)
     }
 };
