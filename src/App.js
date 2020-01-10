@@ -4,8 +4,6 @@ import ToDoList from "./ToDoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {addTodolist, setTodolists} from "./reduser";
-import axios from 'axios'
-import {api} from "./api";
 
 class App extends React.Component {
 
@@ -14,12 +12,7 @@ class App extends React.Component {
     };
 
     componentDidMount() {
-        this.restoreState();
-    }
-
-    restoreState = () =>{
-          api.getTodolists().then(res => {
-                this.props.setTodolists(res.data)});
+        this.props.setTodolists();
     };
 
     __restoreState = () => {
@@ -35,20 +28,9 @@ class App extends React.Component {
             this.setState(state);
         }
     };
-
     saveState = () => {
         let stateAsString = JSON.stringify(this.state);
         localStorage.setItem("todolists-state", stateAsString);
-    };
-
-    nextTodoListId = 4;
-
-    addTodoList = (title) => {
-        api.createTodolist(title).then(res=>{
-                const todolist = res.data.data.item;
-                this.props.addTodolist(todolist);
-        })
-     /*   this.props.addTodolist(title, this.nextTodoListId++);*/
     };
 
     render = () => {
@@ -58,7 +40,7 @@ class App extends React.Component {
         return (
             <>
                 <div>
-                    <AddNewItemForm addItem={this.addTodoList}/>
+                    <AddNewItemForm addItem={this.props.addTodolist}/>
                 </div>
                 <div className="App">
                     {todolists}
@@ -72,8 +54,6 @@ const mapStateToProps = (state) => {
         todolists: state.todolists
     }
 };
-
-
 
 const ConnectedApp = connect(mapStateToProps, {addTodolist, setTodolists})(App);
 

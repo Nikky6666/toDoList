@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import {api} from "./api";
 
 class ToDoListTitle extends React.Component {
     state = {
@@ -11,9 +10,7 @@ class ToDoListTitle extends React.Component {
         this.setState({
             editMode: false
         });
-        api.updateTodolistTitle(this.props.todolistId, this.state.title).then(res => {
-            if(res.data.resultCode===0) this.props.updateTodolistTitle(this.props.todolistId, this.state.title);
-        })
+        this.props.updateTodolistTitle(this.props.todolistId, this.state.title);
     };
     activateEditMode = () =>{
         this.setState({
@@ -26,10 +23,7 @@ class ToDoListTitle extends React.Component {
         })
     };
     deleteTodolist = () => {
-        api.deleteTodolist(this.props.todolistId).then(res=> {
-            if(res.data.resultCode===0) this.props.deleteTodolist(this.props.todolistId);
-        })
-
+        this.props.deleteTodolist(this.props.todolistId);
     };
     render = () =><div>
         {this.state.editMode? <input onBlur={this.deactivateEditMode} autoFocus={true} value={this.state.title} onChange={this.onTitleChanged}/>:

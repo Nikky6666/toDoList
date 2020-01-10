@@ -6,7 +6,7 @@ const instance = axios.create({
     headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
 });
 
-export const api = {
+export const todolistAPI = {
     getTodolists(){
         return  instance.get("");
     },
@@ -25,11 +25,8 @@ export const api = {
     updateTask(todolisId, updatedTask){
         return instance.put(`/${todolisId}/tasks/${updatedTask.id}`, updatedTask)
     },
-    deleteTask(taskId){
-        return axios.delete(`https://social-network.samuraijs.com/api/1.0/todo-lists/tasks/${taskId}`, {
-            withCredentials: true,
-            headers: {"API-KEY": "0a4552fd-fc88-4874-a12b-39f74cc52685"}
-        })
+    deleteTask(todolistId, taskId){
+        return instance.delete(`/${todolistId}/tasks/${taskId}`)
     },
     getTasks(todolistId){
         return instance.get(`/${todolistId}/tasks`)

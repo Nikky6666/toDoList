@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b41d6252-e771-4fad-b5d4-310a96dc167e" name="Default Changelist" comment="Refactoring">
+    <list default="true" id="b41d6252-e771-4fad-b5d4-310a96dc167e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ToDoListTitle.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ToDoListTitle.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/todolistAPI.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reduser.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reduser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +33,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../less11" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Web_site/Web-site" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -111,7 +116,8 @@
       <workItem from="1578543565404" duration="9817000" />
       <workItem from="1578582630175" duration="11697000" />
       <workItem from="1578600210029" duration="996000" />
-      <workItem from="1578646223706" duration="6471000" />
+      <workItem from="1578646223706" duration="7180000" />
+      <workItem from="1578661648394" duration="7822000" />
     </task>
     <task id="LOCAL-00001" summary="Added filtration (All, Complited, Active) and checkbox started to work">
       <created>1574752367924</created>
@@ -162,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578650727969</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added updating todolist title">
+      <created>1578653769602</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1578653769602</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +202,7 @@
     <MESSAGE value="Added requests on server (for todolists and tasks)" />
     <MESSAGE value="Added DAL" />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="Added updating todolist title" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added updating todolist title" />
   </component>
 </project>
